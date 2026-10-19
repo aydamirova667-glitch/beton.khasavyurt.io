@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Бетон Солнечное — бетон с доставкой в Хасавюрте | Цены и калькулятор</title>
+<meta name="description" content="Бетон с доставкой от завода в Хасавюрте и Дагестане. Подберите марку, рассчитайте кубатуру и цену за 2 минуты.">
+<meta property="og:title" content="Бетон Солнечное — бетон с доставкой"><meta property="og:description" content="Рассчитайте объём и цену бетона за 2 минуты."><meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Бетон Солнечное","telephone":"+79285300202","address":{"@type":"PostalAddress","addressLocality":"Хасавюрт","addressRegion":"Республика Дагестан","addressCountry":"RU"}}</script>
+</head><body>
+<header><div class="wrap"><a class="logo" href="#top">Бетон Солнечное</a>
+<nav aria-label="Основное меню"><a href="#pick">Подбор марки</a><a href="#catalog">Каталог и цены</a><a href="#calc">Калькулятор</a><a href="#about">Доставка</a><a href="#contacts">Контакты</a></nav>
+<a class="btn small" data-tel href="#">Позвонить</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap hero-in"><div>
+<p class="eyebrow">Бетонный завод · Хасавюрт</p>
+<h1>Бетон с доставкой от завода. Рассчитайте объём и цену за 2 минуты</h1>
+<p>Собственное производство в Хасавюрте, доставка миксерами.</p>
+<div class="btns"><a class="btn" href="#calc">Рассчитать кубатуру</a><a class="btn ghost" href="#pick">Выбрать марку бетона</a></div></div>
+<aside class="hero-card" aria-label="Контакты"><small>Заказ и консультация</small><a data-tel data-label="phone" href="#">Позвонить</a><span id="heroHours"></span><span id="heroAddr"></span></aside></div></div>
+<div class="facts"><div class="wrap"><div><b>Собственное производство</b><span>без посредников</span></div><div><b>Миксеры 7 и 10 м³</b><span>под ваш объём</span></div><div><b>Доставка в срок</b><span>в указанное вами время</span></div><div><b>Работа по договору</b><span>для частных и юридических лиц</span></div></div></div>
+
+<section class="alt"><div class="wrap"><h2>Как заказать</h2><ol class="steps">
+<li><a class="card" href="#calc"><b>Рассчитайте объём</b>Калькулятор кубатуры</a></li>
+<li><a class="card" href="#pick"><b>Выберите марку</b>Подскажем под вашу задачу</a></li>
+<li><a class="card" href="#catalog"><b>Узнайте цену</b>Каталог с ценами за м³</a></li>
+<li><a class="card" href="#order"><b>Оставьте заявку</b>Или позвоните нам</a></li></ol></div></section>
+
+<section id="pick"><div class="wrap"><h2>Для чего вам нужен бетон?</h2><p class="lead">Нажмите на задачу — подскажем марку.</p>
+<div class="grid" id="tasks"></div><div class="card" id="reco" hidden aria-live="polite"></div>
+<a class="next" href="#catalog">Дальше: каталог и цены ↓</a></div></section>
+
+<section id="catalog" class="alt"><div class="wrap"><h2>Каталог марок и цены</h2><p class="lead">Цена за 1 м³, без доставки.</p>
+<div class="tools"><div><label for="sort">Сортировка</label><select id="sort"><option value="asc">Сначала дешёвые</option><option value="desc">Сначала дорогие</option><option value="m">По марке</option></select></div>
+<div><label for="flt">Назначение</label><select id="flt"><option value="">Все</option></select></div></div>
+<div class="grid" id="cards"></div>
+<a class="next" href="#calc">Дальше: рассчитать объём ↓</a></div></section>
+
+<section id="calc"><div class="wrap"><h2>Калькулятор кубатуры и стоимости</h2><p class="lead">Добавьте одну или несколько конструкций. Размеры вводите в указанных единицах.</p>
+<div class="form"><div><label for="cGrade">Марка бетона</label><select id="cGrade"></select></div>
+<div><label for="zSearch">Куда доставить</label><input id="zSearch" type="search" placeholder="Найти населённый пункт…" autocomplete="off" aria-label="Поиск населённого пункта"><select id="cZone" aria-label="Населённый пункт" style="margin-top:6px"></select></div>
+<div id="kmBox"><label for="cKm">Расстояние доставки, км</label><input id="cKm" type="number" min="0" step="1" inputmode="decimal"><small>От завода до объекта в одну сторону. Оплата за каждый километр.</small>
+<button class="btn small ghost noprint" type="button" id="geo" style="color:var(--ink);margin-top:8px">Определить по моему местоположению</button><small id="geoMsg" aria-live="polite"></small></div>
+<div><label for="cRes">Процент запаса, %</label><input id="cRes" type="number" min="0" max="30" step="1"><small>Запас на неровности основания и потери. Обычно 5%.</small></div></div>
+<div id="rows"></div>
+<div class="btns noprint" style="margin-top:12px"><button class="btn small" id="addRow" type="button">Добавить строку</button></div>
+<div class="res" aria-live="polite" id="res"></div>
+<div class="btns noprint"><button class="btn" id="toOrder" type="button">Отправить расчёт в заявку</button><button class="btn ghost" id="print" type="button" style="color:var(--ink)">Распечатать / сохранить</button></div>
+<a class="next noprint" href="#about">Дальше: доставка ↓</a></div></section>
+
+<section id="about" class="alt"><div class="wrap"><h2>Доставка и о заводе</h2><div class="grid">
+<div class="card"><b>Собственное производство</b><br>Бетон делаем сами, без посредников.</div>
+<div class="card"><b>Лабораторный контроль</b><br>Проверяем каждую партию.</div>
+<div class="card"><b>Паспорт качества</b><br>Выдаём на каждую партию.</div>
+<div class="card"><b>Доставка миксерами</b><br>Быстрая доставка в указанный вами срок!</div>
+<div class="card"><b>Работа по договору</b><br>Для частных и юридических лиц.</div>
+<div class="card"><b>Консультация и замер</b><br>Поможем с маркой и объёмом.</div></div>
+<div class="card" style="margin-top:14px"><b>Как проходит доставка и оплата.</b> Вы оставляете заявку, мы подтверждаем марку, объём, время и цену. Миксер приезжает к указанному времени, вы принимаете бетон и оплачиваете удобным способом. Условия оплаты уточняйте у менеджера.</div>
+<a class="next" href="#order">Дальше: оставить заявку ↓</a></div></section>
+
+<section id="order"><div class="wrap"><h2>Заявка на бетон</h2><p class="lead">Перезвоним и подтвердим цену и время доставки.</p>
+<form id="form" class="form" novalidate>
+<div><label for="fName">Имя</label><input id="fName" required autocomplete="name"></div>
+<div><label for="fPhone">Телефон</label><input id="fPhone" type="tel" required inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel"></div>
+<div><label for="fGrade">Марка</label><select id="fGrade"></select></div>
+<div><label for="fVol">Объём, м³</label><input id="fVol" type="number" min="0" step="0.01"></div>
+<div><label for="fAddr">Адрес доставки</label><input id="fAddr" autocomplete="street-address"></div>
+<div><label for="fDate">Желаемая дата</label><input id="fDate" type="date"></div>
+<div class="full"><label for="fCom">Комментарий</label><textarea id="fCom" rows="3"></textarea></div>
+<div class="full"><label><input id="fAgree" type="checkbox" required style="width:auto"> Согласен на обработку персональных данных</label></div>
+<div class="full"><button class="btn" type="submit">Отправить в WhatsApp</button><div id="ok" class="ok" hidden>Заявка подготовлена. Отправьте сообщение в WhatsApp — мы свяжемся с вами.</div></div></form></div></section>
+
+<section id="contacts" class="alt"><div class="wrap"><h2>Контакты</h2><div class="grid" id="contactList"></div><br><div id="map"></div></div></section>
+</main>
+<footer><div class="wrap"><b>Бетон Солнечное</b> — <span id="fAddress"></span></div></footer>
+<div class="bar"><a class="btn" data-tel href="#">Позвонить</a><a class="btn ghost" id="barWa" style="color:#fff" href="#">WhatsApp</a></div>
+<script src="js/data.js"></script><script src="js/main.js"></script>
+</body></html>
